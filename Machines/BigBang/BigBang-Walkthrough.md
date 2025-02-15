@@ -7,7 +7,7 @@ The Nmap scan revealed two open ports:
 80/tcp (HTTP) running Apache 2.4.62 (Debian)
 Additionally, the HTTP service indicates a redirect to http://blog.bigbang.htb/, which suggests that a virtual host is in use. This means we might need to add blog.bigbang.htb to our /etc/hosts file for proper enumeration.
 
-
+![WPScan Results](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/wpscan.png)
 
 The WPScan results indicate several important security weaknesses:
 
