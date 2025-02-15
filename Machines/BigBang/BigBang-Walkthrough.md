@@ -1,4 +1,4 @@
-![Nmap Scan Results](../Images/nmap.png)
+![Nmap Scan Results](Machines/BigBang/Images/nmap.png)
 Scan Results
 The Nmap scan revealed two open ports:
 
