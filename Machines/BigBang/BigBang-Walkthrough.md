@@ -29,7 +29,8 @@ Outdated WordPress Theme:
 twentytwentyfour (Version 1.1)
 Latest version available: 1.3
 Directory listing enabled under the theme directory, possibly leaking sensitive files.
-Outdated WordPress Plugin - BuddyForms
+
+**Outdated WordPress Plugin - BuddyForms**
 
 ***Installed Version: 2.7.7
 Latest Version: 2.8.15
