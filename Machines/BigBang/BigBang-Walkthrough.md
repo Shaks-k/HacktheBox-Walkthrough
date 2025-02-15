@@ -1,4 +1,4 @@
-![Nmap Scan Results](Machines/BigBang/Images/nmap.png)
+![Nmap Scan Results](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/nmap.png)
 Scan Results
 The Nmap scan revealed two open ports:
 
