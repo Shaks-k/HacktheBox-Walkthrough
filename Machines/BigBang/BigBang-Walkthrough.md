@@ -73,6 +73,24 @@ Now the file stored on server, you try to execute it with phar:// ../ filter to 
 
 ![File_Read](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/phar_read.png)
 
+So another way could be , since the previous exploit could upload the files to server because we used the GIF89a magic bytes to make the program think its a .gif file there is a way to do this with php wrappers.
+We can use LFI via PHP Wrappers and add GIF89a bytes so that the LFI contents gets stored in the file upload.
+
+Refer to this github page https://github.com/ambionics/wrapwrap?ref=benheater.com
+
+Clone the github for wrapwrap.py that can generate php://filter chain that adds prefix and suffix to the contents of a file.
+
+use the venv on Kali since apt manages default env
+With ths wrapwrap.py try to extract the contents of /etc/passwd by adding GIF89a magic bytes and upload the file to server and try to read it now you would do that.
+
+But again this would not help getting the initial foothold on the server.
+
+https://www.ambionics.io/blog/iconv-cve-2024-2961-p1?ref=benheater.com#code-execution
+
+https://github.com/ambionics/cnext-exploits/blob/main/cnext-exploit.py?ref=benheater.com
+
+From the above blogs, it can be found by using target's libc.so.6 file in the script and contructing a payload , when executed on the target system it establishes reverse shell.
+
 
 
 
