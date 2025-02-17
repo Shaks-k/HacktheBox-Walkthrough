@@ -59,3 +59,26 @@ Security Researcher, working at Tenable
 and find a way to manage to trigger an arbitrary deserialization
 So create the phar file, host it from your system and upload it to the server
 
+![Http_Host]https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/http_host.png
+
+Upload the file
+
+![File_Upload]https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/evil_phar_upload.png
+
+Now you can see this file 
+
+![File_Upload]https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/wp-content_uploads.png
+
+Now the file stored on server, you try to execute it with phar:// ../ filter to read the file but deserialization fails, as we dont have valid plugin (Dummy Plugin) as mentioned in the above blog by Joshua Martinelle
+
+![File_Read]https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/phar_read.png
+
+
+
+
+
+
+
+
+
+
