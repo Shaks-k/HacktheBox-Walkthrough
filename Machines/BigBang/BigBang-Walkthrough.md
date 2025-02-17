@@ -705,6 +705,17 @@ Modify the path of libc in the scripts, open a listener and run the exploit, you
 ![Exploit_run](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/exploit.png)
 ![www-data-shell](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/www-data-shell.png)
 
+Look for the wp-config.php and will find database credentials
+![database_creds](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/www-data-wp-config.png)
+
+Find the way to look for the port for which container is established to DBMS. You'll find
+![database_creds](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/database_port_establishment.png)
+
+As we found earlier port 22 is open on target so reverse ssh this port to your local machine using chisel 
+
+
+
+
 
 
 
