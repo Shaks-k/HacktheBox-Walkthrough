@@ -35,3 +35,27 @@ Directory listing enabled under the theme directory, possibly leaking sensitive 
 ***Installed Version: 2.7.7
 Latest Version: 2.8.15
 This might contain security vulnerabilities that could be exploited.***
+
+Upon searching for known vulnerabilitis for BuddyForms 2.7.7 one can find an unauthenticated insecure deserialization vulnerability found in the in the BuddyForm plugin.
+
+In the vulnerable versions, the problem lies in the ‘buddyforms_upload_image_from_url()’ function of the ‘./includes/functions.php’ file
+
+The exploitation of this vulnerability is based on 3 steps
+
+Create a malicious phar file by making it look like an image.
+Send the malicious phar file on the server
+Call the file with the ‘phar://’ wrapper.
+
+https://medium.com/tenable-techblog/wordpress-buddyforms-plugin-unauthenticated-insecure-deserialization-cve-2023-26326-3becb5575ed8
+
+Go through this blog by Joshua Martinelle
+
+Joshua Martinelle
+Follow
+Joshua Martinelle
+34 Followers
+Security Researcher, working at Tenable
+
+and find a way to manage to trigger an arbitrary deserialization
+So create the phar file, host it from your system and upload it to the server
+
