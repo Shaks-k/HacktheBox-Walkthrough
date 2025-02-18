@@ -751,10 +751,8 @@ netstat -ntlp
 
 Without sudo some processes may not be visible due to permission restictions.
 
-```
 ![Netstat](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/netstat.png)
 
-```
 
 
 
