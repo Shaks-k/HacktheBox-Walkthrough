@@ -753,6 +753,14 @@ Without sudo some processes may not be visible due to permission restictions.
 
 ![Netstat](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/netstat.png)
 
+SSH port forward to reach the ports from your system.
+
+Upon visiting the forwarded port it can be found that is a login page from Grafana
+
+![Grafana](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/Grafana.png)
+
+
+
 
 
 
