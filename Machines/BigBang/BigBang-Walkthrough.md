@@ -700,7 +700,7 @@ class Region:
 Exploit()
 ```
 
-Modify the path of libc in the scripts, open a listener and run the exploit, you'll get the shell as www-big-data
+Modify the path of libc in the scripts, open a listener and run the exploit, you'll get the shell as www-data
 
 ![Exploit_run](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/exploit.png)
 ![www-data-shell](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/www-data-shell.png)
@@ -711,8 +711,16 @@ Look for the wp-config.php and will find database credentials
 Find the way to look for the port for which container is established to DBMS. You'll find
 ![database_creds](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/database_port_establishment.png)
 
-As we found earlier port 22 is open on target so reverse ssh this port to your local machine using chisel 
+As we found earlier port 22 is open on target so reverse ssh the DBMS listening port to your local machine using chisel 
 
+```bash
+mysql -h 127.0.0.1 -P 13306 -u wp_user -p
+```
+![mysql_conn](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/mysql_conn.png)
+
+Users creds can be found from databases
+
+![mysql_users](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/mysql_users.png)
 
 ```
 mysql> select * from wp_users;
@@ -724,6 +732,34 @@ mysql> select * from wp_users;
 +----+------------+------------------------------------+---------------+----------------------+-------------------------+---------------------+---------------------+-------------+-----------------+
 2 rows in set (0.29 sec)
 ```
+
+Try to crack the password of users by tools like John the Ripper or Hashcat and shawking password will get cracked to $P$Br7LUHG9NjNk6/QSYm2chNHfxWdoK./:quantumphysics
+
+ssh shawking@<target_ip>
+
+![shawking_user](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/shawking.png)
+
+and you'll get the user flag
+
+![user_flag](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/b_user_txt.png)
+
+Try to look for currently listening TCP Sockets along with their numerical address and the associated process information. Like which service is running on which port especially see if a specific servive like a web server or database is listening on expected port.
+
+```bash
+netstat -ntlp
+```
+
+Without sudo some processes may not be visible due to permission restictions.
+
+```
+![Netstat](https://raw.githubusercontent.com/Shaks-k/HacktheBox-Walkthrough/main/Machines/BigBang/Images/netstat.png)
+
+```
+
+
+
+
+
 
 
 
